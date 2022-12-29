@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>App de Compras</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8" />
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+</head>
+<body>
+	<header>
+		<h3>Aplicativo de Compras</h3>
+	</header>
+	<section>
+		<div class="mercadorias">
+			<input type="text" name="produtos" placeholder="Digite seu Produto">
+			<input type="number" name="price" step="0.01" placeholder="Digite o valor">	
+			<input type="button" name="produtos" value="Cadastrar">
+		</div>
+	</section>
+
+	<section>
+
+		<div class="lista-produtos">
+			
+		</div><!--produtos-->
+
+		<div class="total">
+			<h3>Total: R$ 0</h3>
+		</div>
+		<div class="apagar">
+			<button name="limpar">Apagar</button>
+		</div>
+		
+
+	</section>
+	<script>
+		var itens = [];
+
+		document.querySelector('input[type=button]').addEventListener('click',()=>{
+			var nomeproduto = document.querySelector('input[name="produtos"]');
+			var precoproduto = document.querySelector('input[name="price"]');
+
+			itens.push({
+				nome: nomeproduto.value,
+				valor: precoproduto.value
+			});
+		let listaProdutos = document.querySelector('.lista-produtos') 
+		let soma = 0;
+		listaProdutos.innerHTML = ""
+			itens.map(function(val){
+				soma +=parseFloat(val.valor);
+				listaProdutos.innerHTML+=`
+				<div class="lista-single">
+				<h3>`+val.nome+`</h3>
+				<div class="back"><span>R$`+val.valor+`</span></div>
+				</div>
+				
+				`;
+		});
+		soma = soma.toFixed(2);
+		nomeproduto.value = "";
+		precoproduto.value = "";
+
+		let elementosoma = document.querySelector('.total h3');
+		elementosoma.innerHTML = 'R$' +soma;
+
+			
+		});
+
+	document.querySelector('button[name=limpar]').addEventListener('click',()=>{
+		itens = [];
+		document.querySelector('.lista-produtos').innerHTML = "";
+		document.querySelector('.total h3').innerHTML = "R$0"
+	});
+	</script>
+	
+</body>
+</html>

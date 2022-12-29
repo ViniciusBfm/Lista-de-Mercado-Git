@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family:'Montserrat', sans-serif;
+}
+html,body{
+	height: 100%;
+}
+
+header{
+	text-align: center;
+	background-color: rgb(64, 64, 236);
+	height: 60px;
+}
+header h3{
+	line-height: 60px;
+	font-size: 25px;
+	color: white;
+	border-bottom: 2px solid rgb(26, 26, 94) ;
+}
+.mercadorias{
+	display: flex;
+	margin: 20px auto;
+	width: 80%;
+	padding-left: 10px;
+}
+.mercadorias input{
+	margin-left: 3px;
+	padding-left: 10px;
+}
+.mercadorias input[type=text]{
+	width: 60%;
+	height: 40px;
+	font-size: 18px;
+}
+.mercadorias input[type=number]{
+	width: 20%;
+	height: 40px;
+	font-size: 18px;s
+}
+.mercadorias input[type=button]{
+	width: 20%;
+	background-color: rgb(119, 5, 226);
+	cursor: pointer;
+	color: white;
+	font-size: 20px;
+	border: 2px solid rgb(68, 4, 127) ;
+}
+.lista-single{
+	margin-top: 30px;
+	display: flex;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgb(68, 4, 127);
+}
+.lista-produtos h3{
+	width: 80%;
+	margin-left: 20px;
+}
+.lista-produtos span{
+	width: 20%;
+	font-weight: bold;
+	font-size: 15px;
+}
+.back{
+	background-color: rgb(64, 64, 236);
+	padding: 4px  5px;
+	border-radius: 20px;
+}
+.total{
+	margin-top: 20px;
+	margin-left: 20px;
+	font-size: 22px;
+}
+.apagar{
+	margin-top: 20px;
+	width: 150px;
+	margin: 0 auto;
+	background-color: red;
+}
+button{
+	text-align: center;
+	width: 150px;
+	height: 40px;
+	cursor: pointer;
+	font-size: 20px;
+	background-color: rgb(119, 5, 226);
+	border: 2px solid rgb(68, 4, 127);
+	color: white;
+}
